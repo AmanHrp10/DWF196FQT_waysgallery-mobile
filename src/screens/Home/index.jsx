@@ -52,7 +52,7 @@ const Home = () => {
                   item.user.avatar === null
                     ? DefaultProfile
                     : {
-                        uri: `http://192.168.43.50:8000/uploads/${item.user.avatar}`,
+                        uri: JSON.parse(item.user.avatar).path,
                       }
                 }
                 style={{
@@ -70,7 +70,7 @@ const Home = () => {
           <View style={styles.wrapperImagePost}>
             <TouchableOpacity onPress={() => alert(item.description)}>
               <Image
-                source={{ uri: `http://192.168.43.50:8000/uploads/${photo}` }}
+                source={{ uri: photo }}
                 style={{
                   width: 300,
                   height: 400,
